@@ -1,4 +1,4 @@
-# google_calendar_resize_sidebar
+# Google Calendar Resize Sidebar
 Chrome extension for resizing Google Calendar sidebar.
 
 ![demo](https://user-images.githubusercontent.com/16278388/215399402-05c46ae2-add8-478f-abe5-cc3e98a53209.jpg)
