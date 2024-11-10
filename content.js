@@ -35,7 +35,7 @@ const initializeSidebar = () => {
     if (!isResizing) return;
 
     const width = startWidth + (e.pageX - startX);
-    if (width >= 200 && width <= 500) {
+    if (width >= 200 && width <= 600) {
       sidebar.style.width = `${width}px`;
       localStorage.setItem('gcal-sidebar-width', width);
     }
