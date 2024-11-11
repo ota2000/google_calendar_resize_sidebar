@@ -23,9 +23,14 @@
   height: 100%;
   background: linear-gradient(to right, transparent, rgba(0, 0, 0, 0.08));
   cursor: col-resize;
-  opacity: 1;
+  opacity: 0;
   transition: opacity 0.2s;
   z-index: 1000;
+}
+
+/* マウスオーバー時のグラデーション表示 */
+.QQYuzf:hover::after {
+  opacity: 1;
 }
 
 /* リサイズハンドル */
@@ -48,8 +53,13 @@
   cursor: col-resize;
   box-shadow: -2px 0 6px rgba(0, 0, 0, 0.15);
   opacity: 1;
-  transition: background-color 0.2s;
+  transition: none;
   z-index: 1001;
+}
+
+/* マウスオーバー時の影効果 */
+.QQYuzf:hover::before {
+  box-shadow: -2px 0 6px rgba(0, 0, 0, 0.15);
 }
 
 /* リサイズ中のカーソル設定 */
