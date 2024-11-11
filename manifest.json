@@ -2,7 +2,7 @@
   "name": "Google Calendar Resize Sidebar",
   "author": "Yasuhiro Arakaki",
   "description": "Customize your Google Calendar sidebar width with an intuitive resize handle. Simple, lightweight, and privacy-friendly.",
-  "version": "0.0.5",
+  "version": "0.0.4",
   "manifest_version": 3,
   "icons": {
     "128": "icon128.png"
