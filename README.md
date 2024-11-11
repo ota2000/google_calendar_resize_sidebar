@@ -11,13 +11,14 @@ A Chrome extension that enhances Google Calendar with a resizable sidebar featur
 - 🎯 Double-click to reset to default width
 - 🎨 Clean design that matches Google Calendar's aesthetics
 - 🔒 Privacy-friendly with no special permissions required
+- 🌓 Supports both light and dark themes
 
 ## How to Use
 
 1. Install the extension from Chrome Web Store
 2. Open Google Calendar
 3. Hover over the right edge of the sidebar to reveal the resize handle
-4. Click and drag to adjust the width (200px - 500px)
+4. Click and drag to adjust the width (200px - 600px)
 5. Double-click the handle to reset to default width (256px)
 
 Your preferred width will be automatically saved for future sessions.

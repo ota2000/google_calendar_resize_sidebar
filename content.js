@@ -1,12 +1,30 @@
 const SIDEBAR_CLASS = 'QQYuzf';
 const DEFAULT_WIDTH = 256;
 
+// テーマの監視と適用
+const observeTheme = () => {
+  const themeObserver = new MutationObserver(() => {
+    const metaTheme = document.querySelector('meta[name="theme-color"]');
+    const isDarkMode = metaTheme?.getAttribute('content') === '#1B1B1B';
+    document.documentElement.setAttribute('data-theme', isDarkMode ? 'dark' : 'light');
+  });
+
+  themeObserver.observe(document.head, {
+    childList: true,
+    subtree: true,
+    attributes: true,
+    attributeFilter: ['content']
+  });
+};
+
 const initializeSidebar = () => {
   const sidebar = document.querySelector(`.${SIDEBAR_CLASS}`);
   if (!sidebar) {
     setTimeout(initializeSidebar, 500);
     return;
   }
+
+  observeTheme();  // テーマ監視を開始
 
   // 保存された幅を復元
   const savedWidth = localStorage.getItem('gcal-sidebar-width');
