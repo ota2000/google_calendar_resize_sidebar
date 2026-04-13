@@ -2,7 +2,7 @@
 
 A Chrome/Firefox extension that enhances Google Calendar with a resizable sidebar feature.
 
-[![Chrome Web Store](https://img.shields.io/chrome-web-store/v/ognkenmjolnlnkbbgdgohdaobaoofceh)](https://chromewebstore.google.com/detail/google-calendar-resize-si/ognkenmjolnlnkbbgdgohdaobaoofceh)
+[![Chrome Web Store](https://img.shields.io/chrome-web-store/v/jahcciegnhkkdoflkeifhadaopppgkac)](https://chromewebstore.google.com/detail/google-calendar-resize-si/jahcciegnhkkdoflkeifhadaopppgkac)
 [![Firefox Add-ons](https://img.shields.io/amo/v/google-calendar-resize-sidebar)](https://addons.mozilla.org/firefox/addon/google-calendar-resize-sidebar/)
 
 ![demo](https://user-images.githubusercontent.com/16278388/215399402-05c46ae2-add8-478f-abe5-cc3e98a53209.jpg)
@@ -18,7 +18,7 @@ A Chrome/Firefox extension that enhances Google Calendar with a resizable sideba
 
 ## How to Use
 
-1. Install the extension from [Chrome Web Store](https://chromewebstore.google.com/detail/google-calendar-resize-si/ognkenmjolnlnkbbgdgohdaobaoofceh) or [Firefox Add-ons](https://addons.mozilla.org/firefox/addon/google-calendar-resize-sidebar/)
+1. Install the extension from [Chrome Web Store](https://chromewebstore.google.com/detail/google-calendar-resize-si/jahcciegnhkkdoflkeifhadaopppgkac) or [Firefox Add-ons](https://addons.mozilla.org/firefox/addon/google-calendar-resize-sidebar/)
 2. Open Google Calendar
 3. Hover over the right edge of the sidebar to reveal the resize handle
 4. Click and drag to adjust the width (200px - 600px)
