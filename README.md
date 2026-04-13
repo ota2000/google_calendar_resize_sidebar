@@ -2,6 +2,9 @@
 
 A Chrome/Firefox extension that enhances Google Calendar with a resizable sidebar feature.
 
+[![Chrome Web Store](https://img.shields.io/chrome-web-store/v/ognkenmjolnlnkbbgdgohdaobaoofceh)](https://chromewebstore.google.com/detail/google-calendar-resize-si/ognkenmjolnlnkbbgdgohdaobaoofceh)
+[![Firefox Add-ons](https://img.shields.io/amo/v/google-calendar-resize-sidebar)](https://addons.mozilla.org/firefox/addon/google-calendar-resize-sidebar/)
+
 ![demo](https://user-images.githubusercontent.com/16278388/215399402-05c46ae2-add8-478f-abe5-cc3e98a53209.jpg)
 
 ## Features

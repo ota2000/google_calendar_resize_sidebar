@@ -13,7 +13,7 @@
   padding-right: 16px !important;
 }
 
-/* リサイズ可能エリアのカーソル設定 */
+/* Resize area cursor */
 .QQYuzf::after {
   content: "";
   position: absolute;
@@ -28,12 +28,12 @@
   z-index: 1000;
 }
 
-/* マウスオーバー時のグラデーション表示 */
+/* Show gradient on hover */
 .QQYuzf:hover::after {
   opacity: 1;
 }
 
-/* リサイズハンドル */
+/* Resize handle */
 .QQYuzf::before {
   content: "⋮⋮";
   position: absolute;
@@ -57,25 +57,25 @@
   z-index: 1001;
 }
 
-/* マウスオーバー時の影効果 */
+/* Hover shadow effect */
 .QQYuzf:hover::before {
   box-shadow: -2px 0 6px rgba(0, 0, 0, 0.15);
 }
 
-/* リサイズ中のカーソル設定 */
+/* Cursor during active resize */
 .QQYuzf.resizing,
 .QQYuzf.resizing::before,
 .QQYuzf.resizing::after {
   cursor: col-resize !important;
 }
 
-/* ダークモード */
+/* Dark mode */
 [data-theme="dark"] .QQYuzf::before {
   --handle-bg: #303134;
   --handle-color: #e8eaed;
 }
 
-/* グラデーション */
+/* Dark mode gradient */
 [data-theme="dark"] .QQYuzf::after {
   --gradient-color: rgba(255, 255, 255, 0.08);
 }

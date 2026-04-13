@@ -1,7 +1,25 @@
+// Google Calendar's internal sidebar class name.
+// This may change when Google updates their UI. See: https://github.com/ota2000/google_calendar_resize_sidebar/issues/2
 const SIDEBAR_CLASS = 'QQYuzf';
 const DEFAULT_WIDTH = 256;
 
-// テーマの監視と適用
+const safeGetItem = (key) => {
+  try {
+    return localStorage.getItem(key);
+  } catch {
+    return null;
+  }
+};
+
+const safeSetItem = (key, value) => {
+  try {
+    localStorage.setItem(key, value);
+  } catch {
+    // Ignore storage errors (e.g. private browsing mode)
+  }
+};
+
+// Observe theme changes and apply data-theme attribute
 const observeTheme = () => {
   const themeObserver = new MutationObserver(() => {
     const metaTheme = document.querySelector('meta[name="theme-color"]');
@@ -24,10 +42,10 @@ const initializeSidebar = () => {
     return;
   }
 
-  observeTheme();  // テーマ監視を開始
+  observeTheme();
 
-  // 保存された幅を復元
-  const savedWidth = localStorage.getItem('gcal-sidebar-width');
+  // Restore saved width
+  const savedWidth = safeGetItem('gcal-sidebar-width');
   if (savedWidth) {
     sidebar.style.width = `${savedWidth}px`;
   }
@@ -35,8 +53,9 @@ const initializeSidebar = () => {
   let isResizing = false;
   let startX;
   let startWidth;
+  let rafId = null;
 
-  // マウスダウンでリサイズ開始
+  // Start resizing on mousedown at the right edge
   sidebar.addEventListener('mousedown', (e) => {
     if (e.offsetX <= sidebar.offsetWidth - 20) return;
 
@@ -48,31 +67,39 @@ const initializeSidebar = () => {
     e.preventDefault();
   });
 
-  // リサイズ中
+  // Resize with requestAnimationFrame throttling
   document.addEventListener('mousemove', (e) => {
     if (!isResizing) return;
 
-    const width = startWidth + (e.pageX - startX);
-    if (width >= 200 && width <= 600) {
-      sidebar.style.width = `${width}px`;
-      localStorage.setItem('gcal-sidebar-width', width);
-    }
+    if (rafId) return;
+    rafId = requestAnimationFrame(() => {
+      const width = startWidth + (e.pageX - startX);
+      if (width >= 200 && width <= 600) {
+        sidebar.style.width = `${width}px`;
+        safeSetItem('gcal-sidebar-width', width);
+      }
+      rafId = null;
+    });
   });
 
-  // リサイズ終了
+  // Stop resizing
   document.addEventListener('mouseup', () => {
     if (isResizing) {
       sidebar.classList.remove('resizing');
       isResizing = false;
+      if (rafId) {
+        cancelAnimationFrame(rafId);
+        rafId = null;
+      }
     }
   });
 
-  // ダブルクリックでリセット
+  // Double-click to reset width
   sidebar.addEventListener('dblclick', (e) => {
     if (e.offsetX <= sidebar.offsetWidth - 20) return;
 
     sidebar.style.width = `${DEFAULT_WIDTH}px`;
-    localStorage.setItem('gcal-sidebar-width', DEFAULT_WIDTH);
+    safeSetItem('gcal-sidebar-width', DEFAULT_WIDTH);
   });
 };
 
